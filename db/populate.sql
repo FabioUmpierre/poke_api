@@ -16,6 +16,7 @@ INSERT INTO type (name) VALUES ('Poison');
 INSERT INTO type (name) VALUES ('Bug');
 INSERT INTO type (name) VALUES ('Ground');
 INSERT INTO type (name) VALUES ('Rock');
+
 INSERT INTO pokemon (
 	name,
     type1Id,
@@ -93,7 +94,7 @@ INSERT INTO pokemon (
     type1Id,
     nationalDexNumber
 ) VALUES (
-	'blastoise',
+	'Blastoise',
     (SELECT id FROM type WHERE name LIKE '%Water%'),
     9
 );
