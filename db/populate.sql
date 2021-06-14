@@ -17,6 +17,44 @@ INSERT INTO type (name) VALUES ('Bug');
 INSERT INTO type (name) VALUES ('Ground');
 INSERT INTO type (name) VALUES ('Rock');
 
+INSERT INTO advantage(name) VALUES('Attack2x');
+INSERT INTO advantage(name) VALUES('Attack1x');
+INSERT INTO advantage(name) VALUES('Attack1/2x');
+INSERT INTO advantage(name) VALUES('Noeffect');
+
+INSERT INTO type_2 (name_2) VALUES ('Water');
+INSERT INTO type_2 (name_2) VALUES ('Eletric');
+INSERT INTO type_2 (name_2) VALUES ('Grass');
+INSERT INTO type_2 (name_2) VALUES ('Fire');
+INSERT INTO type_2 (name_2) VALUES ('Psychic');
+INSERT INTO type_2 (name_2) VALUES ('Ghost');
+INSERT INTO type_2 (name_2) VALUES ('Dark');
+INSERT INTO type_2 (name_2) VALUES ('Fairy');
+INSERT INTO type_2 (name_2) VALUES ('Flying');
+INSERT INTO type_2 (name_2) VALUES ('Normal');
+INSERT INTO type_2 (name_2) VALUES ('Ice');
+INSERT INTO type_2 (name_2) VALUES ('Steel');
+INSERT INTO type_2 (name_2) VALUES ('Fighting');
+INSERT INTO type_2 (name_2) VALUES ('Dragon');
+INSERT INTO type_2 (name_2) VALUES ('Poison');
+INSERT INTO type_2 (name_2) VALUES ('Bug');
+INSERT INTO type_2 (name_2) VALUES ('Ground');
+INSERT INTO type_2 (name_2) VALUES ('Rock');
+
+insert into type_advantage
+values
+(default, 1,1,4),
+(default, 1,1,17),
+(default, 1,1,18),
+(default, 1,2,1),
+(default, 1,2,3),
+(default, 1,2,14),
+(default, 2,1,1),
+(default, 2,1,9),
+(default, 2,2,2),
+(default, 2,2,3),
+(default, 2,2,14);
+
 INSERT INTO pokemon (
 	name,
     type1Id,
