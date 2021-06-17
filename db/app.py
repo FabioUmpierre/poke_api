@@ -1,3 +1,4 @@
+from weakref import WeakKeyDictionary
 import MySQLdb
 import pandas as pd
 host = "localhost"
@@ -12,21 +13,24 @@ arquivo = pd.read_csv(r"C:\Users\Pichau\dev\banco\typescsv.csv")
 lista = []
 for i in arquivo:
     if i != 'Unnamed: 0':
-        lista.append(i) #esse código pega o nome dos pokes que estão sendo atacados
+        lista.append(i) #esse código pega o nome dos tipos que estão sendo atacados
     
 
 count = 1
 count2 = 1
 c = con.cursor()
 
-def select(fields, tables, where=None):
+def select(fields, tables, where=None, like=None):
     global c
     query = "SELECT " + fields + " FROM " + tables
-    if (where):
+    if (where) and not (like):
         query = query + ' WHERE ' + where
+    if (where) and (like):
+        query = query + " WHERE " + where + " LIKE " + "'%"+like+"%'"
+    
     c.execute(query)
     return c.fetchall() #select do db
-    
+
 
 def insert(values, table, fields=None):
     global c, con
@@ -38,6 +42,35 @@ def insert(values, table, fields=None):
     c.execute(query)
     con.commit()#insert do db
 
+
+
+
+#codigo abaixo adiciona dados na tabela typematchup usando name
+'''
+attackingTypeId= select('id', 'type', 'name', 'Ground')
+defendingTypeId = select('id', 'type', 'name', 'Steel')
+attackingTypeId = attackingTypeId[0][0]
+defendingTypeId = defendingTypeId[0][0]
+
+
+effectPower = arquivo[lista[defendingTypeId - 1]][attackingTypeId - 1]
+if effectPower == '2×':
+        count3 = 1
+elif effectPower == '1×':
+        count3 = 2
+elif effectPower == '½×':
+        count3 = 3
+else:
+        count3 = 4 
+
+
+values = [f"'{attackingTypeId}', '{defendingTypeId}', '{count3}'"]   
+insert(values, "typematchup")     
+'''
+
+
+#codigo abaixo adiciona dados na tabela typematchup usando id
+'''
 while count <= 18 and count2 <= 18:
     effectPower = arquivo[lista[count - 1]][count2 - 1]
     if effectPower == '2×':
@@ -57,4 +90,4 @@ while count <= 18 and count2 <= 18:
         count = 0
     if count < 18:
         count += 1   #nessa parte do codigo ele pega os ids de attackingTypeId e defendingTypeId
-    
+  '''  
