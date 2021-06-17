@@ -27,19 +27,7 @@ INSERT INTO typeeffect (power, description) VALUES
      (0.5, 'Ineffective'),
      (0.0, 'Not Affected');
 
-INSERT INTO typematchup VALUES (
-	(SELECT id FROM type t WHERE t.name LIKE '%water%'),
-    (SELECT id FROM type ad WHERE ad.name LIKE '%fire%'),
-    (SELECT id FROM typeeffect te WHERE te.power = 2)
-), (
-	(SELECT id FROM type t WHERE t.name LIKE '%water%'),
-    (SELECT id FROM type ad WHERE ad.name LIKE '%Dragon%'),
-    (SELECT id FROM typeeffect te WHERE te.power = 0.5)
-), (
-	(SELECT id FROM type t WHERE t.name LIKE '%normal%'),
-    (SELECT id FROM type ad WHERE ad.name LIKE '%ghost%'),
-    (SELECT id FROM typeeffect te WHERE te.power = 0)
-);
+
 
 
 
@@ -89,5 +77,18 @@ VALUES (
         NULL
 );
 
+INSERT INTO typematchup VALUES (
+	(SELECT id FROM type t WHERE t.name LIKE '%water%'),
+    (SELECT id FROM type ad WHERE ad.name LIKE '%fire%'),
+    (SELECT id FROM typeeffect te WHERE te.power = 2)
+), (
+	(SELECT id FROM type t WHERE t.name LIKE '%water%'),
+    (SELECT id FROM type ad WHERE ad.name LIKE '%Dragon%'),
+    (SELECT id FROM typeeffect te WHERE te.power = 0.5)
+), (
+	(SELECT id FROM type t WHERE t.name LIKE '%normal%'),
+    (SELECT id FROM type ad WHERE ad.name LIKE '%ghost%'),
+    (SELECT id FROM typeeffect te WHERE te.power = 0)
+);
 
 

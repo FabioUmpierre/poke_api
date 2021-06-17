@@ -4,11 +4,12 @@ CREATE TABLE Type (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE kanto . TypeEffect(
+CREATE TABLE TypeEffect(
 id INT NOT NULL AUTO_INCREMENT,
 power DOUBLE NOT NULL,
 description varchar(45),
-PRIMARY KEY(id));
+PRIMARY KEY(id)
+);
 
 
 CREATE TABLE TypeMatchup (
@@ -26,11 +27,10 @@ CREATE TABLE Pokemon (
     nationalDexNumber int NOT NULL,
     name varchar(45) NOT NULL,
     type1Id INT NOT NULL,
-    type2Id INT DEFAULT NULL,
+    type2Id INT,
     PRIMARY KEY (id),
     FOREIGN KEY (type1Id) REFERENCES type (id),
     FOREIGN KEY (type2Id) REFERENCES type (id),
     UNIQUE KEY name (name),
     UNIQUE KEY nationalDexNumber (nationalDexNumber)
-	
 );

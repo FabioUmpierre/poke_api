@@ -23,7 +23,8 @@ SELECT * FROM pokemon p
     
  select t.name as attackingTypeName,
      te.power as effectPower,
-     t2.name as defendingTypeName 
+     t2.name as defendingTypeName,
+     te.description as description
  from typematchup tm
 	 JOIN type t ON tm.attackingTypeId = t.id
 	 JOIN typeeffect te ON tm.typeEffectId = te.id
