@@ -2,24 +2,24 @@
 SET SQL_SAFE_UPDATES = 0;
 
 INSERT INTO type (name) VALUES 
-	('Water'), 
-    ('Eletric'),
-    ('Grass'),
-    ('Fire'),
-	('Psychic'),
-	('Ghost'),
-	('Dark'),
-	('Fairy'),
-	('Flying'),
-	('Normal'),
-	('Ice'),
-	('Steel'),
-	('Fighting'),
-	('Dragon'),
-	('Poison'),
-	('Bug'),
+	('Normal'), 
+    ('Fighting'),
+    ('Flying'),
+    ('Poison'),
 	('Ground'),
-	('Rock');
+	('Rock'),
+	('Bug'),
+	('Ghost'),
+	('Steel'),
+	('Fire'),
+	('Water'),
+	('Grass'),
+	('Electric'),
+	('Psychic'),
+	('Ice'),
+	('Dragon'),
+	('Dark'),
+	('Fairy');
 	
 INSERT INTO typeeffect (power, description) VALUES
      (2.0, 'Super Effective'),
