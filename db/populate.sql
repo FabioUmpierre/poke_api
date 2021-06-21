@@ -82,7 +82,3 @@ VALUES (
 		(SELECT id FROM type t WHERE t.name LIKE '%Water%'),
         NULL
 );
-
-
-
-
