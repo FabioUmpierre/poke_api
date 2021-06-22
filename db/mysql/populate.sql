@@ -1,4 +1,4 @@
-# disable default behavior of safe updates (allows update with LIKE)
+-- disable default behavior of safe updates (allows update with LIKE)
 SET SQL_SAFE_UPDATES = 0;
 
 INSERT INTO type (name) VALUES 
